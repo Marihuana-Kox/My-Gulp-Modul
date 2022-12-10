@@ -11,7 +11,7 @@ const imagemin    = require('gulp-imagemin'); // Модуль для сжати�
 const newer       = require('gulp-newer'); // Модуль отбора новых файлов
 const del         = require('del'); // Модуль для удаления
 
-function browsersync() {
+function browsersync() {// Сервер
     browserSync.init({
         server: { baseDir: 'app/' }, // Директория окуда сервер берет файлы
         notify: false, // Убрать всплывающее уведомление в браузере
@@ -19,7 +19,7 @@ function browsersync() {
     })
 }
 
-function scripts() {
+function scripts() { // Сбор скриптов
     return src([
         'node_modules/jquery/dist/jquery.min.js',
         'app/js/app.js',
@@ -30,7 +30,7 @@ function scripts() {
         .pipe(browserSync.stream()) // перезагрузка страницы после изменения файлов
 }
 
-function styles() {
+function styles() { // Сбор стилей
     return src(`app/${preprocessor}/main.${preprocessor}`)
         .pipe(eval(preprocessor)())
         .pipe(sass())
@@ -41,22 +41,22 @@ function styles() {
         .pipe(browserSync.stream()) // перезагрузка страницы после изменения файлов
 }
 
-function images() {
+function images() { // Сжать изображения
     return src('app/images/src/**/*')
         .pipe(newer('app/images/dest/'))
         .pipe(imagemin())
         .pipe(dest('app/images/dest/'))
 }
 
-function cleanimg() {
+function cleanimg() { // Очистить папку со сжатыми картинками
     return del('app/images/dest/**/*', { force: true})
 }
 
-function cleandist() {
+function cleandist() { // Очистить папку dist
     return del('dist/**/*', { force: true})
 }
 
-function buildcopy(){
+function buildcopy(){ // Копирование файлов в конечную папку
     return src([
         'app/css/**/*.min.css',
         'app/js/**/*min.js',
@@ -66,11 +66,11 @@ function buildcopy(){
     .pipe(dest('dist'))
 }
 
-function startwatch() {
-    watch(`app/**/${preprocessor}/**/*`, styles) // Слежение за изменениями в файлах 
+function startwatch() { // Функция слежения за изменениями в файлах
+    watch(`app/**/${preprocessor}/**/*`, styles) 
     watch(['app/**/*.js', '!app/**/*.min.js'], scripts) // Слежение за изменениями в файлах "!" перед файлм исключает его из наблюдения 
-    watch('app/**/*.html').on('change', browserSync.reload) // Слежение за изменениями в файлах "!" перед файлм исключает его из наблюдения 
-    watch('app/images/src/**/*', images) // Слежение за изменениями в файлах "!" перед файлм исключает его из наблюдения 
+    watch('app/**/*.html').on('change', browserSync.reload) 
+    watch('app/images/src/**/*', images) 
 }
 
 exports.browsersync = browsersync;
