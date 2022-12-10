@@ -52,6 +52,20 @@ function cleanimg() {
     return del('app/images/dest/**/*', { force: true})
 }
 
+function cleandist() {
+    return del('dist/**/*', { force: true})
+}
+
+function buildcopy(){
+    return src([
+        'app/css/**/*.min.css',
+        'app/js/**/*min.js',
+        'app/images/dest/**/*',
+        'app/**/*.html',
+    ], { base: 'app' })
+    .pipe(dest('dist'))
+}
+
 function startwatch() {
     watch(`app/**/${preprocessor}/**/*`, styles) // Слежение за изменениями в файлах 
     watch(['app/**/*.js', '!app/**/*.min.js'], scripts) // Слежение за изменениями в файлах "!" перед файлм исключает его из наблюдения 
@@ -64,5 +78,6 @@ exports.scripts     = scripts; // Экспорт функции
 exports.styles      = styles; // Экспорт функции
 exports.images      = images; // Экспорт функции
 exports.cleanimg    = cleanimg; // Экспорт функции
+exports.build       = series(cleandist, styles, scripts, images, buildcopy) // Экспорт функции
 
 exports.default = parallel(scripts, styles, images, browsersync, startwatch)
