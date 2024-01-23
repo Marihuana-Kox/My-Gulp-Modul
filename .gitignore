@@ -1,3 +1,10 @@
 # Игнорируется директория в любой директории проекта
-node_modules/
-dist/
+/**/node_modules/
+/dist/
+/.git/
+/app/css/
+/**/_backstage
+/**/package-lock.json
+/**/Thumbs.db
+/**/*.DS_Store
+/**/debug.log

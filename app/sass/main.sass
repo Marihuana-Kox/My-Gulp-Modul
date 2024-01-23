@@ -1,15 +1,30 @@
 @import config
-@import media
+@import vars
+@import fonts
 
-.header 
-	background: url('/images/dest/psychoterapoia.jpg') no-repeat
-	background-size: cover
-	min-height: 400px
-
-h1 
-	color: white
-	font-size: 3em
+body
+	font-size: 16px
+	min-width: 320px
 	position: relative
-	top: 300px
-	right: -20px
-	text-shadow: 2px 2px 2px gray
+	line-height: 1.65
+	font-family: $default-font
+section
+	padding: 0 20% 0 20%
+	display: flex
+	flex-direction: column
+.wrapper__bild
+	width: 100%
+	min-height: 400px
+	position: relative
+	display: block
+.mein__bild
+	width: 100%
+	position: absolute
+	top: 0
+	bottom: 0
+.footer__block
+	display: block
+	color: gray
+	font-size: 2em
+
+@import media
