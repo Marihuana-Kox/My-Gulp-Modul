@@ -1,9 +1,7 @@
 # Начало работы
 <ol>
-    <li>Скачиваете репозмиторий git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</li>
+    <li>Скачиваете репозмиторий git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git . (Точка в конце что бы скачать в свою директорию)</li>
     <li>Установка npm install может еще понадобится установка Gulp - npm install gulp</li>
-    <li>Скачиваете репозмиторий
-    git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</li>
     <li>Установка npm install может еще понадобится установка Gulp</li>
     <li>Запускаете Gulp </li>
     <li>Выбираете default</li>
