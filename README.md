@@ -1,13 +1,13 @@
 # Начало работы
-<ul>
-    <ol>Скачиваете репозмиторий git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</ol>
-    <ol>Установка npm install может еще понадобится установка Gulp - npm install gulp</ol>
-    <ol>Скачиваете репозмиторий</ol>
-    git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</ol>
-    <ol>Установка npm install может еще понадобится установка Gulp</ol>
-    <ol>Запускаете Gulp </ol>
-    <ol>Выбираете default</ol>
-</ul>
+<ol>
+    <li>Скачиваете репозмиторий git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</li>
+    <li>Установка npm install может еще понадобится установка Gulp - npm install gulp</li>
+    <li>Скачиваете репозмиторий
+    git clone git@github.com:Marihuana-Kox/My-Gulp-Modul.git .</li>
+    <li>Установка npm install может еще понадобится установка Gulp</li>
+    <li>Запускаете Gulp </li>
+    <li>Выбираете default</li>
+</ol>
 <h2>Задачи Gulp:</h2>
     <p>gulp : запустить задачу gulp по умолчанию (sass, js, watch, браузерсинк) для веб-разработки;
     build : собрать проект в папку dist (очистка, оптимизация образа, удаление ненужных файлов);
