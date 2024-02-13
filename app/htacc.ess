@@ -1,5 +1,7 @@
 <ifModule mod_expires.c>
 
+Options +Includes
+
 # Add correct content-type for fonts
 AddType application/vnd.ms-fontobject .eot
 AddType application/x-font-ttf .ttf
